@@ -1,13 +1,20 @@
-def user_input
-  dictionary = ["below", "down", "go", "going", "horn", "how", "howdy", "it", "i", "low", "own", "part", "partner", "sit"]
-  puts "Type something"
-  user_text = gets.chomp
-  substrings(user_text, dictionary)
+dictionary = ["below", "down", "go", "going", "horn", "how", "howdy", "it", "i", "low", "own", "part", "partner", "sit"]
+
+def substrings(text, dictionary)
+  substring = Hash.new
+  arr = text.downcase.split
+  dictionary.each do |word|
+    arr.each do |arr_word|
+      if arr_word.include?(word)
+        if substring.has_key?(word)
+          substring[word] += 1
+        else
+          substring[word] = 1
+        end
+      end
+    end
+  end
+  puts substring
 end
 
-def substrings(user_text, dictionary)
-  puts user_text
-  puts dictionary
-end
-
-user_input
+substrings("Howdy partner, sit down! How's it going?", dictionary)

@@ -4,3 +4,4 @@ This is a repository for [The Odin Project](https://www.theodinproject.com/paths
 
 ## Project Reflections
 
+Good litle project to put to practice what I learned on arrays and hashes
